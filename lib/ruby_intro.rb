@@ -1,5 +1,3 @@
-# When done, submit this entire file to the autograder.
-
 # Part 1
 
 def sum arr
@@ -9,10 +7,6 @@ def sum arr
   end
   return sum
 end
-
-a = [1,2,3,4,5,6]
-puts sum(a)
-
 
 def max_2_sum arr
   s = arr.sort.reverse
@@ -82,5 +76,33 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize (isbn, price)
+    if isbn.length < 1 or price <= 0
+      raise(ArgumentError)
+    end
+    @price = price
+    @isbn = isbn
+  end
+  
+  def isbn
+    @isbn
+  end
+  
+  def isbn= isbn
+    @isbn = isbn
+  end
+  
+  def price
+    @price
+  end
+  
+  def price= price
+    @price = price
+  end
+  
+  def price_as_string
+    return "$" + sprintf('%.2f', @price)
+  end
+
+  
 end
